@@ -1,0 +1,212 @@
+{
+  "reminderTemplates": {
+    "agentTransition": {
+      "minimal": {
+        "template": "🤖 {agentType} 활성화\n🎯 핵심: {coreGuidelines}",
+        "variables": ["agentType", "coreGuidelines"]
+      },
+      "normal": {
+        "template": "🤖 **{agentType}** 활성화\n\n🎯 **핵심 지침**:\n{guidelines}\n\n{priorityMessage}",
+        "variables": ["agentType", "guidelines", "priorityMessage"]
+      },
+      "detailed": {
+        "template": "🤖 **{agentType}** 활성화\n\n🎯 **핵심 지침**:\n{guidelines}\n\n{preTaskChecklist}\n\n💡 **팁**: {tip}",
+        "variables": ["agentType", "guidelines", "preTaskChecklist", "tip"]
+      }
+    },
+    "periodicCheck": {
+      "success": {
+        "template": "✅ **주기적 검증 완료**\n📊 준수율: {score}% ({grade})\n⚠️ 위반: {violationCount}개\n🔄 다음 검증: {nextCheck}",
+        "variables": ["score", "grade", "violationCount", "nextCheck"]
+      },
+      "warning": {
+        "template": "⚠️ **지침 준수 주의 필요**\n📊 준수율: {score}% ({grade})\n🚨 주요 문제:\n{issues}\n💡 권장 조치: {recommendations}",
+        "variables": ["score", "grade", "issues", "recommendations"]
+      },
+      "critical": {
+        "template": "🚨 **긴급 개입 필요**\n❌ 심각한 문제 감지: {criticalIssues}\n🔧 즉시 조치: {immediateActions}\n📞 시스템 지원: 필요시 관리자 문의",
+        "variables": ["criticalIssues", "immediateActions"]
+      }
+    },
+    "preTaskReminder": {
+      "simple": {
+        "template": "🎯 **작업 시작 전 체크**\n{checklist}",
+        "variables": ["checklist"]
+      },
+      "comprehensive": {
+        "template": "🎯 **복잡한 작업 감지**\n\n📋 **사전 체크리스트**:\n{preExecution}\n\n⏱️ **진행 중 주의사항**:\n{duringExecution}\n\n✅ **완료 후 필수사항**:\n{postExecution}",
+        "variables": ["preExecution", "duringExecution", "postExecution"]
+      }
+    },
+    "violationAlert": {
+      "low": {
+        "template": "💡 **개선 제안**\n{violationType}: {description}\n🔧 권장 조치: {recommendation}",
+        "variables": ["violationType", "description", "recommendation"]
+      },
+      "medium": {
+        "template": "⚠️ **지침 위반 감지**\n{violationType}: {description}\n🔧 권장 조치: {recommendation}\n⏰ 예상 소요시간: {estimatedTime}",
+        "variables": ["violationType", "description", "recommendation", "estimatedTime"]
+      },
+      "high": {
+        "template": "🚨 **심각한 위반 감지**\n{violationType}: {description}\n🚨 즉시 조치 필요: {urgentAction}\n📞 필요시 시스템 지원 요청",
+        "variables": ["violationType", "description", "urgentAction"]
+      }
+    },
+    "autoFixNotification": {
+      "success": {
+        "template": "🔧 **자동 수정 완료**\n✅ {fixedIssue}\n📊 개선된 준수율: {newScore}%",
+        "variables": ["fixedIssue", "newScore"]
+      },
+      "partial": {
+        "template": "🔧 **부분 자동 수정**\n✅ 해결: {fixedIssues}\n⚠️ 수동 필요: {manualIssues}",
+        "variables": ["fixedIssues", "manualIssues"]
+      },
+      "failed": {
+        "template": "❌ **자동 수정 실패**\n🚨 문제: {failedIssue}\n🔧 수동 개입 필요: {manualSteps}",
+        "variables": ["failedIssue", "manualSteps"]
+      }
+    }
+  },
+  "agentSpecificGuidelines": {
+    "Strategy Planning Agent": [
+      "📋 요구사항 분석 전 프로젝트 폴더 구조 확인",
+      "🎯 분석 결과를 evidence/ 폴더에 즉시 기록",
+      "📊 시장 조사 데이터는 실시간으로 문서화",
+      "🔍 경쟁사 분석 시 출처 명확히 기재",
+      "📈 트렌드 분석 결과 시각화 포함"
+    ],
+    "Product Design Agent": [
+      "🏗️ 설계 문서는 docs/ 폴더에 체계적으로 저장",
+      "📐 아키텍처 다이어그램과 함께 증거 파일 생성",
+      "🔄 설계 변경사항 즉시 Git 커밋",
+      "🎨 UI/UX 설계 시 사용자 시나리오 포함",
+      "⚙️ 기술 스택 선택 근거 문서화"
+    ],
+    "Development Agent": [
+      "💻 모든 코드는 src/ 폴더에 체계적으로 구성",
+      "📝 구현 완료 시 즉시 completion-proof.md 생성",
+      "🔄 작업 단위별 Git 커밋 및 푸시 필수",
+      "🧪 테스트 코드와 함께 품질 검증 수행",
+      "📚 API 문서 및 코드 주석 작성",
+      "🔍 코드 리뷰 체크리스트 적용"
+    ],
+    "User Testing Agent": [
+      "👥 테스트 결과는 evidence/ 폴더에 상세 기록",
+      "📊 사용자 피드백 데이터 실시간 분석",
+      "🔍 테스트 시나리오와 결과 매핑 문서화",
+      "📈 사용성 지표 정량적 측정",
+      "🎯 개선사항 우선순위 설정"
+    ],
+    "Growth Optimization Agent": [
+      "📈 최적화 전후 성능 지표 비교 분석",
+      "🎯 개선사항 우선순위별 체계적 기록",
+      "📊 ROI 분석 결과 즉시 문서화",
+      "🔍 A/B 테스트 결과 통계 분석",
+      "💡 지속적 개선 방안 제시"
+    ],
+    "Marketing Agent": [
+      "📢 마케팅 전략 수립 시 타겟 분석 필수",
+      "📊 캠페인 성과 지표 실시간 모니터링",
+      "🎨 크리에이티브 에셋 체계적 관리",
+      "📈 전환율 최적화 실험 결과 기록"
+    ],
+    "Business Model Agent": [
+      "💰 수익 모델 설계 시 시장 검증 데이터 포함",
+      "📊 비즈니스 지표 대시보드 구축",
+      "🎯 핵심 성과 지표(KPI) 정의 및 추적",
+      "💡 수익화 전략 단계별 로드맵 작성"
+    ]
+  },
+  "contextualMessages": {
+    "highComplexity": "🚨 복잡한 작업이 감지되었습니다. 단계별 체크포인트 저장을 권장합니다.",
+    "lowCompliance": "⚠️ 지침 준수율이 낮습니다. 품질 검증에 더 주의를 기울여주세요.",
+    "missingEvidence": "📋 완료된 작업 중 증거 파일이 누락된 것이 있습니다. 즉시 생성을 권장합니다.",
+    "gitSyncDelay": "🔄 Git 동기화가 지연되고 있습니다. 데이터 손실 방지를 위해 즉시 커밋하세요.",
+    "longRunningTask": "⏰ 현재 작업이 오래 진행되고 있습니다. 중간 체크포인트 저장을 고려하세요.",
+    "excellentCompliance": "🌟 우수한 지침 준수를 유지하고 있습니다. 현재 품질을 계속 유지하세요!"
+  },
+  "urgencyLevels": {
+    "low": {
+      "icon": "💡",
+      "prefix": "개선 제안",
+      "color": "blue",
+      "timeout": 10000
+    },
+    "medium": {
+      "icon": "⚠️",
+      "prefix": "주의 필요",
+      "color": "orange", 
+      "timeout": 15000
+    },
+    "high": {
+      "icon": "🚨",
+      "prefix": "긴급 조치",
+      "color": "red",
+      "timeout": 30000
+    },
+    "critical": {
+      "icon": "💥",
+      "prefix": "즉시 개입",
+      "color": "darkred",
+      "timeout": 60000
+    }
+  },
+  "userExperienceSettings": {
+    "fatigueThresholds": {
+      "hourlyLimit": 3,
+      "dailyLimit": 20,
+      "consecutiveLimit": 2
+    },
+    "displayPreferences": {
+      "animationDuration": 300,
+      "autoHideDelay": 5000,
+      "soundEnabled": false,
+      "vibrationEnabled": false
+    },
+    "adaptiveSettings": {
+      "learningEnabled": true,
+      "personalizeFrequency": true,
+      "contextAwareness": true
+    }
+  },
+  "messageFormatting": {
+    "icons": {
+      "success": "✅",
+      "warning": "⚠️", 
+      "error": "❌",
+      "info": "ℹ️",
+      "tip": "💡",
+      "urgent": "🚨",
+      "progress": "🔄",
+      "complete": "🎉"
+    },
+    "colors": {
+      "primary": "#007bff",
+      "success": "#28a745",
+      "warning": "#ffc107",
+      "danger": "#dc3545",
+      "info": "#17a2b8"
+    },
+    "typography": {
+      "headerSize": "16px",
+      "bodySize": "14px",
+      "codeSize": "12px",
+      "fontFamily": "system-ui, -apple-system, sans-serif"
+    }
+  },
+  "automationRules": {
+    "triggerConditions": {
+      "agentTransition": true,
+      "complianceBelow": 70,
+      "violationDetected": true,
+      "timeBasedReminder": 30,
+      "complexTaskStart": true
+    },
+    "suppressionRules": {
+      "userFatigue": true,
+      "duplicateMessage": true,
+      "lowPriorityOverride": false,
+      "maintenanceMode": false
+    }
+  }
+}
